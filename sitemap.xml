@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Home Page -->
+    <url>
+        <loc>https://loreandduran.com/</loc>
+        <lastmod>2024-04-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- Aggiungi qui altre pagine del sito web, come ad esempio: -->
+    <!-- Pagina dei prodotti -->
+    <!-- <url>
+        <loc>https://loreandduran.com//prodotti</loc>
+        <lastmod>2023-04-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url> -->
+    <!-- Pagina di contatto -->
+    <url>
+        <loc>https://loreandduran.com/contatti.html</loc>
+        <lastmod>2023-04-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://loreandduran.com/chisiamo.html</loc>
+        <lastmod>2023-04-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://loreandduran.com/faq.html</loc>
+        <lastmod>2023-04-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <!-- Altre pagine possono essere aggiunte seguendo lo stesso formato -->
+</urlset>

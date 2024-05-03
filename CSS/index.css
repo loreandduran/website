@@ -1,0 +1,320 @@
+@font-face {
+    font-family: idelist-sans-light;
+    src: url(../font/idealist-sans.light.ttf);
+}
+
+body {
+    margin: 0;
+    background-color: #DFE1ED;
+    font-family: idelist-sans-light;
+}
+
+.gradient {
+    height: 10%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent, #DFE1ED);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.container {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.main_photo {
+    max-width: 100vw;
+    object-fit: cover;
+    display: block;
+}
+
+.logo {
+    width: 15vw; /* Regola la larghezza del logo come preferisci */
+    position: absolute;
+    left: 50%;
+    top: 50%; /* Centra il logo verticalmente rispetto al suo contenitore */
+    transform: translate(-50%, -90%); /* Centra esattamente il logo */
+}
+
+.slogan {
+    font-family: idelist-sans-light;
+    font-size: 2.5vw; /* Adatta la dimensione del font in base alla larghezza dello schermo */
+    position: absolute;
+    left: 50%;
+    top: 70%; /* Posiziona lo slogan appena sotto il logo */
+    transform: translate(-50%, -50%);
+    overflow: visible;
+    white-space: nowrap;
+}
+
+.item {
+    max-width: 100vw;
+    height: auto;
+    position: relative;
+}
+
+.item_image {
+    height: 30vw;
+    width: 30vw;
+    background-color:  black;
+    border-radius: 5%;
+    display: inline-block;
+}
+
+.item_image img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.image_left {
+    margin-left: 10%;
+}
+
+.image_right {
+    float: right;
+}
+
+.separator{
+    background-color: transparent;
+    max-width: 100vw;
+}
+
+.item_title {
+    width: 100%;
+    font-family: idelist-sans-light;
+    font-size: 3vw;
+    color: black;
+    text-align: center;
+}
+
+.item_text {
+    max-width: 40vw;
+    font-family: idelist-sans-light;
+    color: black;
+    display: inline-block;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    position: absolute;
+}
+
+.info {
+    width: 50vw;
+    display: grid;
+    grid-template-areas: "pagine social";
+    grid-template-columns: 1fr 1fr;
+    margin: auto; /* Centra il contenitore nella pagina */
+}
+
+.info a {
+    color: white;
+    text-decoration: none;
+}
+
+.info > div {
+    flex: 1; /* Fa in modo che ogni div occupi uno spazio uguale */
+    text-align: center; /* Centra il testo all'interno di ogni div */
+}
+
+.info i {
+    font-size: 24px; /* O la dimensione che preferisci */
+    color: white; /* O il colore che preferisci */
+}
+
+.info .pagine {
+    grid-area: pagine;
+}
+
+.info .social {
+    grid-area: social;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media screen and (min-width: 0px) and (max-width: 649px){
+
+    .gradient {
+
+    }
+
+    .container {
+
+    }
+
+    .logo {
+        width: 35vw; /* Aumenta la larghezza del logo per schermi più piccoli */
+    }
+    
+    .slogan {
+        font-size: 5vw; /* Aumenta la dimensione del font dello slogan per schermi più piccoli */
+    }
+
+    .main_photo {
+        height: 100svh;
+        object-fit: cover;
+        display: block;
+    }
+
+    .item {
+        height: auto;
+        width: auto;
+    }
+
+    .item_image {
+        height: 80vw;
+        width: 80vw;
+    }
+
+    .image_left {
+        float: left;
+    }
+    .image_right {
+        float: left;
+        margin-left: 10vw;
+    }
+
+    .separator{
+        height: 10vh;
+    }
+
+    .item_title{
+
+    }
+
+    .item_text {
+        position: relative;
+        max-width: 100vw;
+    }
+
+    .info {
+        width: 99vw;
+        font-size: 12px;
+    }
+
+    .info i {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 1919px){
+
+    .gradient {
+        
+    }
+
+    .container {
+        
+    }
+
+    .logo {
+        width: 15vw; /* Adatta la larghezza del logo per schermi di medie dimensioni */
+    }
+
+    .slogan {
+        font-size: 2.5vw; /* Mantiene la dimensione del font dello slogan per schermi di medie dimensioni */
+    }
+
+    .main_photo {
+        width: 100vw;
+    }
+
+    .item {
+        height: 40vw
+    }
+
+    .item_image {
+        height: 30vw;
+        width: 30vw;
+    }
+
+    .image_left {
+        margin-left: 10%;
+    }
+
+    .image_right {
+        float: right;
+        margin-right: 10vw;
+    }
+
+    .separator{
+        height: 20vh;
+    }
+
+    .item_title {
+
+    }
+
+    .item_text {
+        font-size: 2vw;
+    }
+
+    .info {
+        width: 85vw;
+        font-size: 18px;
+    }
+
+    .info i {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .gradient {
+
+    }
+
+    .container {
+
+    }
+
+    .logo {
+        width: 15vw; /* Riduci la larghezza del logo per schermi più grandi */
+    }
+
+    .slogan {
+        font-size: 2.5vw; /* Riduci la dimensione del font dello slogan per schermi più grandi */
+    }
+
+    .main_photo {
+        width: 100vw;
+    }
+
+    .item {
+        height: 30vw
+    }
+
+    .item_image {
+        height: 20vw;
+        width: 20vw;
+    }
+
+    .image_left {
+        margin-left: 15vw;
+    }
+
+    .image_right {
+        float: right;
+        margin-right: 15vw;
+    }
+
+    .separator {
+        height: 10vh;
+    }
+
+    .item_title {
+        font-size: 2vw;
+    }
+
+    .item_text {
+        font-size: 1.5vw;
+    }
+}
