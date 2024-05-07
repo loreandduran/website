@@ -50,14 +50,24 @@ body {
 }
 
 .item {
-    max-width: 100vw;
-    height: auto;
+    max-width: 80vw;
+    height: 40vh;
     position: relative;
+
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    grid-column-gap: 10vw;
+
 }
 
 .item_image {
-    height: 30vw;
-    width: 30vw;
+    height: 40vh;
+    width: 40vh;
+    max-width: 50vw;
+    max-height: 50vw;
+    
     background-color:  black;
     border-radius: 5%;
     display: inline-block;
@@ -71,16 +81,21 @@ body {
 }
 
 .image_left {
-    margin-left: 10%;
+    grid-area: left;
+    margin: auto;
+    margin-left: 0px;
 }
 
 .image_right {
-    float: right;
+    grid-area: right;
+    margin: auto;
+    margin-right: 0px;
 }
 
 .separator{
     background-color: transparent;
     max-width: 100vw;
+    height: 20vh;
 }
 
 .item_title {
@@ -92,13 +107,18 @@ body {
 }
 
 .item_text {
-    max-width: 40vw;
     font-family: idelist-sans-light;
     color: black;
     display: inline-block;
-    margin-left: 10vw;
-    margin-right: 10vw;
     position: absolute;
+    margin: auto;
+}
+
+.item_text_right {
+    grid-area: right;
+}
+.item_text_left {
+    grid-area: left;
 }
 
 .info {
@@ -112,6 +132,11 @@ body {
 .info a {
     color: white;
     text-decoration: none;
+}
+
+.info h4 {
+    margin: 5px;
+    display: inline-block
 }
 
 .info > div {
@@ -166,23 +191,29 @@ footer {
     .item {
         height: auto;
         width: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas: 
+        "top"
+        "bottom";
     }
 
     .item_image {
         height: 80vw;
         width: 80vw;
+        max-width: 80vw;
+        max-height: 80vw;
     }
 
     .image_left {
-        float: left;
+        grid-area: top;
     }
     .image_right {
-        float: left;
-        margin-left: 10vw;
+        grid-area: top;
     }
 
     .separator{
-        height: 10vh;
+        height: 30vh;
     }
 
     .item_title{
@@ -190,17 +221,28 @@ footer {
     }
 
     .item_text {
-        position: relative;
-        max-width: 100vw;
+        grid-area: bottom;
+    }
+
+    .item_text_right {
+        grid-area: bottom;
+    }
+
+    .item_text_left {
+        grid-area: bottom;
     }
 
     .info {
         width: 99vw;
         font-size: 12px;
+        grid-template-areas: 
+        "pagine"
+        "social";
+        grid-template-columns: 1fr;
     }
 
     .info i {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
@@ -227,25 +269,24 @@ footer {
     }
 
     .item {
-        height: 40vw
+        height: 30vh
     }
 
     .item_image {
-        height: 30vw;
-        width: 30vw;
+        width: 30vh;
+        height: 30vh;
     }
 
     .image_left {
-        margin-left: 10%;
+        
     }
 
     .image_right {
-        float: right;
-        margin-right: 10vw;
+        
     }
 
     .separator{
-        height: 20vh;
+
     }
 
     .item_title {
@@ -289,25 +330,23 @@ footer {
     }
 
     .item {
-        height: 30vw
+
     }
 
     .item_image {
-        height: 20vw;
-        width: 20vw;
+
     }
 
     .image_left {
-        margin-left: 15vw;
+        
     }
 
     .image_right {
-        float: right;
-        margin-right: 15vw;
+        
     }
 
     .separator {
-        height: 10vh;
+
     }
 
     .item_title {

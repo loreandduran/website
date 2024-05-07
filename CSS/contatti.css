@@ -72,16 +72,29 @@ h1{
 }
 @media screen and (min-width: 0px) and (max-width: 649px){
     .contatti {
-        flex-direction: column-reverse;
+        grid-template-areas: 
+        "informazioni"
+        "ordinazioni";
+        grid-template-columns: 1fr;
+        row-gap: 5vh;
     }
     .contatti .informazioni {
-        width: 100%;
+        width: 80vw;
+        margin: auto;
+        height: auto;
     }
     
     .contatti .ordinazioni {
-        flex-direction: column;
+        width: 80vw;
+        margin: auto;
+        height: auto;
+    }
+
+    .contatti a {
+        font-size: 1.2rem;
     }
 }
+
 
 @media screen and (min-width: 650px) and (max-width: 1919px) {}
 
