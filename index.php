@@ -27,8 +27,11 @@
         <img src="image/logo.svg" class="logo">
         <p class="slogan">Your style your sign</p>
     </div>
-
-    <div class="separator"></div>
+    <?php
+    include 'connection.php';
+    $connessione = connect();
+    ?>
+    <!--<div class="separator"></div>
     <div class="item">
         <div class="item_image image_left"><img src="./image/articoli/1/1.jpg" alt=""></div>
         <div class="item_text item_text_right">
@@ -49,7 +52,43 @@
             <p>Prezzo: € 15,00</p>
         </div>
         
-    </div>
+    </div>-->
+    <?php
+        $sql = "SELECT * FROM Articoli WHERE Articoli.show = 1";
+        if($result = $connessione->query($sql)){
+            while($row = $result->fetch_array()){
+                $idArticolo = $row['idArticolo'];
+                $tipo = $row['Tipo'];
+                $colore = $row['Colore'];
+                $tintaunita = $row['Tintaunita'];
+                $prezzo = $row['Prezzo'];
+                $descrizione = $row['Descrizione'];
+                $prezzo = number_format($prezzo ,2,",");
+                $sql2 = "SELECT * FROM Foto WHERE idArticolo = ".$idArticolo;
+                if($idArticolo%2!=0){
+                    $image_side="image_left";
+                    $text_side="item_text_right";
+                }else{
+                    $image_side="image_right";
+                    $text_side="item_text_left";
+                }
+                echo '
+                <div class="separator"></div>
+                <div class="item">
+                    <div class="item_image '.$image_side.'"><img src="./image/articoli/'.$idArticolo.'/1.jpg" alt=""></div>
+                    <div class="item_text '.$text_side.'">
+                        <h2>'.$colore.'</h2>
+                        <p>'.$descrizione.'</p>
+                        <br>
+                        <p>Prezzo: € '.$prezzo.'</p>
+                    </div>
+                </div>
+                ';
+            }
+        }else{
+            echo "<tr><td colspan='2'>Errore, impossibile eseguire la query " . $sql ."." . $connessione->connect_error . "</td></tr>"; 
+        }
+    ?>
 
     <div class="separator"></div>
 
