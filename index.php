@@ -18,23 +18,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container">
+    <div class="start">
         
-        <div class="gradient"></div>
+        <!--<div class="gradient"></div>
         
-        <img src="image/montagne.jpg" class="main_photo">
+        <img src="image/montagne.jpg" class="main_photo">-->
 
         <img src="image/logo.svg" class="logo">
         <p class="slogan">Your style your sign</p>
     </div>
+    <div class="separator"></div>
     <?php
-    include 'connection.php';
-    $connessione = connect();
+        include 'connection.php';
+        $connessione = connect();
     ?>
+
+    <!--Filtro campi d'abbigliamento. Da sistemare-->
+    <!--<?php
+        $sql = "SELECT Tipo FROM Articoli WHERE Articoli.show = 1";
+        if($result = $connessione->query($sql)){
+            echo '<label for="tipo">Scegli un tipo:</label>';
+            echo '<select name="tipo" id="tipo">';
+            echo '<option value="all">Tutto</option>';
+            while($row = $result->fetch_array()){
+                echo '<option value='.$row["Tipo"].'>'.$row["Tipo"].'</option>';
+            }
+            echo '</select>';
+        }else{
+            echo "<tr><td colspan='2'>Errore, impossibile eseguire la query " . $sql ."." . $connessione->connect_error . "</td></tr>"; 
+        }
+    ?>-->
     
     <?php
         $sql = "SELECT * FROM Articoli WHERE Articoli.show = 1";
         if($result = $connessione->query($sql)){
+            $position=1;
             while($row = $result->fetch_array()){
                 $idArticolo = $row['idArticolo'];
                 $tipo = $row['Tipo'];
@@ -43,8 +61,18 @@
                 $prezzo = $row['Prezzo'];
                 $descrizione = $row['Descrizione'];
                 $prezzo = number_format($prezzo ,2,",");
-                $sql2 = "SELECT * FROM Foto WHERE idArticolo = ".$idArticolo;
-                if($idArticolo%2!=0){
+                $estensione;
+                
+                $sql2 = "SELECT estensione FROM Foto WHERE Foto.nFoto = 1 AND Foto.idArticolo = ".$idArticolo;
+                if($result2 = $connessione->query($sql2)){
+                    $row = $result2->fetch_assoc();
+                    $estensione = $row['estensione'];
+                }else{
+                    echo "<tr><td colspan='2'>Errore, impossibile eseguire la query " . $sql2 ."." . $connessione->connect_error . "</td></tr>"; 
+                }
+
+                
+                if($position%2!=0){
                     $image_side="image_left";
                     $text_side="item_text_right";
                 }else{
@@ -52,8 +80,9 @@
                     $text_side="item_text_left";
                 }
                 echo '
+                <a href="/articolo.php?item='.$idArticolo.'">
                 <div class="item">
-                    <div class="item_image '.$image_side.'"><img src="./image/articoli/'.$idArticolo.'/1.jpg" alt=""></div>
+                    <div class="item_image '.$image_side.'"><img src="./image/articoli/'.$idArticolo.'/1.'.$estensione.'" alt=""></div>
                     <div class="item_text '.$text_side.'">
                         <h2>'.$colore.'</h2>
                         <p>'.$descrizione.'</p>
@@ -61,15 +90,16 @@
                         <p>Prezzo: € '.$prezzo.'</p>
                     </div>
                 </div>
+                </a>
                 <div class="separator"></div>
                 ';
+                $position++;
             }
         }else{
             echo "<tr><td colspan='2'>Errore, impossibile eseguire la query " . $sql ."." . $connessione->connect_error . "</td></tr>"; 
         }
     ?>
 
-    <div class="separator"></div>
 
     <footer>
         <h1>LORE&DURAN</h1>
