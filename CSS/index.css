@@ -136,8 +136,8 @@ body {
 
 .info h4 {
     margin: 5px;
-    display: inline-block
 }
+
 
 .info > div {
     flex: 1; /* Fa in modo che ogni div occupi uno spazio uguale */
@@ -151,10 +151,14 @@ body {
 
 .info .pagine {
     grid-area: pagine;
+    display: grid;
+    grid-template-rows: auto auto auto;
 }
 
 .info .social {
     grid-area: social;
+    display: grid;
+    grid-template-rows: auto auto auto;
 }
 
 footer {
@@ -239,10 +243,16 @@ footer {
         "pagine"
         "social";
         grid-template-columns: 1fr;
+        
     }
 
     .info i {
         font-size: 16px;
+    }
+
+    .info h4 {
+        margin: 5px;
+        display: inline-block
     }
 }
 

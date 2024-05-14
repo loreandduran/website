@@ -32,7 +32,7 @@ header img {
     grid-template-areas: "informazioni ordinazioni";
     grid-template-columns: 1fr 1fr;
     column-gap: 20px; /* Aggiunge un margine di 20px tra le colonne */
-    margin: 0 auto;
+    margin: auto;
     height: 70vh;
 }
 
@@ -77,6 +77,8 @@ h1{
         "ordinazioni";
         grid-template-columns: 1fr;
         row-gap: 5vh;
+        height: auto;
+        padding-bottom: 10vh;
     }
     .contatti .informazioni {
         width: 80vw;

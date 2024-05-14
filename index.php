@@ -114,15 +114,15 @@
             <div class="social">
                 <h2>I nostri social</h2>
 
-                <h4><a href="mailto:info@loreandduran.com"><i class="fas fa-envelope"></i> info@loreandduran.com</a></h4>
+                <a href="mailto:info@loreandduran.com"><i class="fas fa-envelope"></i> info@loreandduran.com</a>
 
                 <br>
 
-                <h4><a href="https://tiktok.com/@loreanddurant"><i class="fab fa-tiktok"></i> @loreandduran</a></h4>
+                <a href="https://tiktok.com/@loreanddurant"><i class="fab fa-tiktok"></i> @loreandduran</a>
 
                 <br>
             
-                <h4><a href="https://instagram.com/loreandduran"><i class="fab fa-instagram"></i> @loreandduran</a></h4>
+                <a href="https://instagram.com/loreandduran"><i class="fab fa-instagram"></i> @loreandduran</a>
             </div>
         
         </div>
