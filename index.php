@@ -31,28 +31,7 @@
     include 'connection.php';
     $connessione = connect();
     ?>
-    <!--<div class="separator"></div>
-    <div class="item">
-        <div class="item_image image_left"><img src="./image/articoli/1/1.jpg" alt=""></div>
-        <div class="item_text item_text_right">
-            <h2>Black</h2>
-            <p>Una maglietta con un design semplice e moderno.</p>
-            <br>
-            <p>Prezzo: € 15,00</p>
-        </div>
-    </div>
-    <div class="separator"></div>
-    <div class="item">
-        <div class="item_image image_right"><img src="./image/articoli/2/1.jpg" alt=""></div>
-        
-        <div class="item_text item_text_left"">
-            <h2>White</h2>
-            <p>Una maglietta con un design semplice e moderno.</p>
-            <br>
-            <p>Prezzo: € 15,00</p>
-        </div>
-        
-    </div>-->
+    
     <?php
         $sql = "SELECT * FROM Articoli WHERE Articoli.show = 1";
         if($result = $connessione->query($sql)){
@@ -73,7 +52,6 @@
                     $text_side="item_text_left";
                 }
                 echo '
-                <div class="separator"></div>
                 <div class="item">
                     <div class="item_image '.$image_side.'"><img src="./image/articoli/'.$idArticolo.'/1.jpg" alt=""></div>
                     <div class="item_text '.$text_side.'">
@@ -83,6 +61,7 @@
                         <p>Prezzo: € '.$prezzo.'</p>
                     </div>
                 </div>
+                <div class="separator"></div>
                 ';
             }
         }else{
