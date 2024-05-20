@@ -10,7 +10,7 @@ body {
 }
 
 .navbar, header{
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     height: 10vh;
     display: flex;
     align-items: center;
@@ -37,7 +37,7 @@ header img {
 }
 
 .contatti .informazioni, .contatti .ordinazioni {
-    background-color: #bdbdc7; /* Colore leggermente più scuro rispetto allo sfondo */
+    background-color: #c5c2ba; /* Colore leggermente più scuro rispetto allo sfondo */
     border-radius: 10px; /* Arrotonda gli angoli */
     padding: 20px; /* Aggiunge un po' di spazio interno per non avere il testo attaccato ai bordi */
     height: 100%;

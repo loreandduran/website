@@ -20,47 +20,84 @@
     <script src="./JS/articolo.js"></script>
 </head>
 <body>
-    <?php
-        $itemNumber = $_GET['item'];
-        $sql = "SELECT * FROM Foto WHERE idArticolo = ".$itemNumber;
-        if($result = $connessione->query($sql)){
-            echo '<div class="slideshow-container">';
-            while($row = $result->fetch_array()){
-                $idArticolo = $row['idArticolo'];
-                $idFoto = $row['idFoto'];
-                $nFoto = $row['nFoto'];
-                $estensione = $row['estensione'];
-                if($nFoto==1){
+    <a href="index.php" class="navbar">
+        <header>
+            <img src="image/logo.png" alt="LORE&DURAN">
+        </header>
+    </a>
+    <div class="item">
+        <div class="immagini">
+            <?php
+                $itemNumber = $_GET['item'];
+                $sql = "SELECT * FROM Foto WHERE idArticolo = ".$itemNumber;
+                if($result = $connessione->query($sql)){
+                    $dotCounter = 0;
+                    echo '<div class="slideshow-container">';
+                    while($row = $result->fetch_array()){
+                        $dotCounter++;
+                        $idArticolo = $row['idArticolo'];
+                        $idFoto = $row['idFoto'];
+                        $nFoto = $row['nFoto'];
+                        $estensione = $row['estensione'];
+                        if($nFoto==1){
+                            echo '
+                            <div class="mySlides fade" style="display: block">
+                                <img src="./image/articoli/'.$itemNumber.'/'.$nFoto.'.'.$estensione.'">
+                            </div>
+                        ';
+                        }else{
+                            echo '
+                            <div class="mySlides fade">
+                                <img src="./image/articoli/'.$itemNumber.'/'.$nFoto.'.'.$estensione.'">
+                            </div>
+                        ';
+                        }
+                        
+                    }
                     echo '
-                    <div class="mySlides fade" style="display: block">
-                        <img src="./image/articoli/'.$itemNumber.'/'.$nFoto.'.'.$estensione.'">
-                    </div>
-                ';
-                }else{
-                    echo '
-                    <div class="mySlides fade">
-                        <img src="./image/articoli/'.$itemNumber.'/'.$nFoto.'.'.$estensione.'">
-                    </div>
-                ';
+                            <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-circle-chevron-left"></i></a>
+                            <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-circle-chevron-right"></i></a>
+                        </div>
+                    ';
+                    echo '<div style="text-align:center">';
+                    for($i=1; $i<=$dotCounter; $i++){
+                        echo '
+                            <span class="dot" onclick="currentSlide('.$i.')"></span>
+                        ';
+                    }
+                    echo '</div>';
                 }
-                
-            }
-            echo '
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-            ';
-            echo '<div style="text-align:center">';
-            $dotCounter = 1;
-            while($row = $result->fetch_array()){
-                echo '
-                    <span class="dot" onclick="currentSlide('.$dotCounter.')"></span>
-                ';
-                $dotCounter++;
-            }
-            echo '</div>';
-        }
-    ?>
+            ?>
+        </div>
+
+        <div class="testo">
+            <?php
+                $sql = "SELECT * FROM Articoli WHERE idArticolo = ".$itemNumber;
+                if($result = $connessione->query($sql)){
+                    while($row = $result->fetch_array()){
+                        $idArticolo = $row['idArticolo'];
+                        $tipo = $row['Tipo'];
+                        $colore = $row['Colore'];
+                        $tintaunita = $row['Tintaunita'];
+                        $prezzo = $row['Prezzo'];
+                        $descrizione = $row['Descrizione'];
+                        $prezzo = number_format($prezzo ,2,",");
+                        
+                        echo '
+                            <h2>'.$colore.'</h2>
+                            <p>'.$descrizione.'</p>
+                            <br>
+                            <p>Prezzo: € '.$prezzo.'</p>
+                        ';
+                    }
+                }else{
+                    echo "<tr><td colspan='2'>Errore, impossibile eseguire la query " . $sql ."." . $connessione->connect_error . "</td></tr>"; 
+                }
+            ?>
+        </div>
+        
+    </div>
+    
 
 
     <!--<div class="slideshow-container">

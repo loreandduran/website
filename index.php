@@ -132,6 +132,11 @@
                 <br>
             
                 <a href="https://instagram.com/loreandduran"><i class="fab fa-instagram"></i> @loreandduran</a>
+
+
+                <br>
+            
+                <a href="https://github.com/loreandduran"><i class="fa-brands fa-github"></i> loreandduran</a>
             </div>
         
         </div>

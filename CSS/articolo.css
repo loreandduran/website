@@ -9,16 +9,56 @@ body {
     font-family: idelist-sans-light;
 }
 
+.navbar, header {
+  background-color: rgb(0, 0, 0);
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+header img {
+  width: 100%;
+  height: 10vh;
+  object-fit: contain;
+  background-color: white;
+}
+
+.item {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-basis: auto;
+  width: 90vw;
+  margin: auto;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+}
+.immagini {
+  flex: 1;
+  margin: auto;
+  display: block;
+}
+.testo {
+  flex: 1;
+  margin: auto;
+  margin-top: 0;
+}
 /* Slideshow container */
 .slideshow-container {
-  max-width: 20vw;
+  max-width: 40vw;
+  max-height: 80vh;
   position: relative;
   margin: auto;
+  display: block;
 }
 
 .slideshow-container img{
-  width: 20vw
+  max-width: 40vw;
+  max-height: 80vh;
+  margin: auto;
+  display: block;
 }
 
 /* Nascondi le immagini di default */
@@ -28,24 +68,27 @@ body {
 
 /* Freccie di navigazione */
 .prev, .next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
+  height: auto;
   margin-top: -22px;
   padding: 16px;
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 50%;
   user-select: none;
 }
 
 /* Posizione della freccia "next" */
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
 }
 
 /* Punti di navigazione */
@@ -54,6 +97,7 @@ body {
   height: 15px;
   width: 15px;
   margin: 0 2px;
+  margin-top: 2px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -126,32 +170,49 @@ footer {
 }
 
 @media screen and (min-width: 0px) and (max-width: 649px) {
+  .item {
+      width: 90vw;
+      margin: auto;
+      flex-direction: column;
+  }
 
+  .slideshow-container {
+    max-width: 90vw;
+    height: 50vh;
+    position: relative;
+    margin: auto;
+  }
 
-    .info {
-        width: 99vw;
-        font-size: 12px;
-        grid-template-areas:
-            "pagine"
-            "social";
-        grid-template-columns: 1fr;
-    }
+  .slideshow-container img {
+    max-width: 90vw;
+    height: 50vh;
+    margin: auto;
+  }
 
-    .info i {
-        font-size: 16px;
-    }
+  .info {
+      width: 99vw;
+      font-size: 12px;
+      grid-template-areas:
+          "pagine"
+          "social";
+      grid-template-columns: 1fr;
+  }
+
+  .info i {
+      font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 650px) and (max-width: 1919px) {
 
-    .info {
-        width: 85vw;
-        font-size: 18px;
-    }
+  .info {
+      width: 85vw;
+      font-size: 18px;
+  }
 
-    .info i {
-        font-size: 18px;
-    }
+  .info i {
+      font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 1920px) {
