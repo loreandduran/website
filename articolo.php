@@ -39,28 +39,35 @@
                         $idFoto = $row['idFoto'];
                         $nFoto = $row['nFoto'];
                         $estensione = $row['estensione'];
-                        if($nFoto==1){
-                            echo '
-                            <div class="mySlides fade" style="display: block">
-                                <img src="./image/articoli/'.$itemNumber.'/'.$nFoto.'.'.$estensione.'">
-                            </div>
-                        ';
-                        }else{
-                            echo '
-                            <div class="mySlides fade">
-                                <img src="./image/articoli/'.$itemNumber.'/'.$nFoto.'.'.$estensione.'">
-                            </div>
-                        ';
+                        if($nFoto>1){
+                            if($nFoto==2){
+                                echo '
+                                <div class="mySlides fade" style="display: block">
+                                    <img src="./image/articoli/'.$itemNumber.'/'.$nFoto.'.'.$estensione.'">
+                                </div>
+                            ';
+                            }else{
+                                echo '
+                                <div class="mySlides fade">
+                                    <img src="./image/articoli/'.$itemNumber.'/'.$nFoto.'.'.$estensione.'">
+                                </div>
+                            ';
+                            }
                         }
+                        
                         
                     }
                     echo '
+                            
+                        </div>
+                        
                             <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-circle-chevron-left"></i></a>
                             <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-circle-chevron-right"></i></a>
-                        </div>
+                        
+                        
                     ';
                     echo '<div style="text-align:center">';
-                    for($i=1; $i<=$dotCounter; $i++){
+                    for($i=1; $i < $dotCounter; $i++){
                         echo '
                             <span class="dot" onclick="currentSlide('.$i.')"></span>
                         ';
@@ -97,28 +104,6 @@
         </div>
         
     </div>
-    
-
-
-    <!--<div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="./image/articoli/1/1.jpg">
-        </div>
-        <div class="mySlides fade">
-            <img src="./image/articoli/2/1.jpg">
-        </div>
-        <div class="mySlides fade">
-            <img src="image3.jpg">
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span> 
-    </div>-->
     
 </body>
 </html>
