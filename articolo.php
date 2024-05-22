@@ -68,9 +68,15 @@
                     ';
                     echo '<div style="text-align:center">';
                     for($i=1; $i < $dotCounter; $i++){
-                        echo '
+                        if($i==1){
+                            echo '
+                            <span class="dot active" onclick="currentSlide('.$i.')"></span>
+                        ';
+                        }else{
+                            echo '
                             <span class="dot" onclick="currentSlide('.$i.')"></span>
                         ';
+                        }
                     }
                     echo '</div>';
                 }
