@@ -10,7 +10,7 @@ body {
 }
 
 .navbar, header{
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     height: 10vh;
     display: flex;
     align-items: center;
@@ -32,12 +32,12 @@ header img {
     grid-template-areas: "informazioni ordinazioni";
     grid-template-columns: 1fr 1fr;
     column-gap: 20px; /* Aggiunge un margine di 20px tra le colonne */
-    margin: 0 auto;
+    margin: auto;
     height: 70vh;
 }
 
 .contatti .informazioni, .contatti .ordinazioni {
-    background-color: #bdbdc7; /* Colore leggermente più scuro rispetto allo sfondo */
+    background-color: #c5c2ba; /* Colore leggermente più scuro rispetto allo sfondo */
     border-radius: 10px; /* Arrotonda gli angoli */
     padding: 20px; /* Aggiunge un po' di spazio interno per non avere il testo attaccato ai bordi */
     height: 100%;
@@ -77,6 +77,8 @@ h1{
         "ordinazioni";
         grid-template-columns: 1fr;
         row-gap: 5vh;
+        height: auto;
+        padding-bottom: 10vh;
     }
     .contatti .informazioni {
         width: 80vw;
