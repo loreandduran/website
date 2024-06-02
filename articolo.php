@@ -82,33 +82,70 @@
                 }
             ?>
         </div>
-
-        <div class="testo">
-            <?php
-                $sql = "SELECT * FROM Articoli WHERE idArticolo = ".$itemNumber;
-                if($result = $connessione->query($sql)){
-                    while($row = $result->fetch_array()){
-                        $idArticolo = $row['idArticolo'];
-                        $tipo = $row['Tipo'];
-                        $colore = $row['Colore'];
-                        $tintaunita = $row['Tintaunita'];
-                        $prezzo = $row['Prezzo'];
-                        $descrizione = $row['Descrizione'];
-                        $prezzo = number_format($prezzo ,2,",");
-                        
-                        echo '
-                            <h2>'.$colore.'</h2>
-                            <p>'.$descrizione.'</p>
-                            <br>
-                            <p>Prezzo: € '.$prezzo.'</p>
-                        ';
+        <div class="content">
+            <div class="testo">
+                <?php
+                    $sql = "SELECT * FROM Articoli WHERE idArticolo = ".$itemNumber;
+                    if($result = $connessione->query($sql)){
+                        while($row = $result->fetch_array()){
+                            $idArticolo = $row['idArticolo'];
+                            $tipo = $row['Tipo'];
+                            $colore = $row['Colore'];
+                            $tintaunita = $row['Tintaunita'];
+                            $prezzo = $row['Prezzo'];
+                            $descrizione = $row['Descrizione'];
+                            $prezzo = number_format($prezzo ,2,",");
+                            
+                            echo '
+                                <h2>'.$colore.'</h2>
+                                <p>'.$descrizione.'</p>
+                                <br>
+                                <p>Prezzo: € '.$prezzo.'</p>
+                            ';
+                        }
+                    }else{
+                        echo "<tr><td colspan='2'>Errore, impossibile eseguire la query " . $sql ."." . $connessione->connect_error . "</td></tr>"; 
                     }
-                }else{
-                    echo "<tr><td colspan='2'>Errore, impossibile eseguire la query " . $sql ."." . $connessione->connect_error . "</td></tr>"; 
-                }
-            ?>
+                ?>
+            </div>
+            
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Taglia</th>
+                        <th>Lunghezza</th>
+                        <th>Spalle</th>
+                        <th>Manica</th>
+                    </tr>
+                    <?php
+                        $sql = "SELECT Size, Lenght, Shoulders, Sleeve
+                        FROM Misure WHERE idArticolo = ".$itemNumber;
+                        if($result = $connessione->query($sql)){
+                            while($row = $result->fetch_array()){
+                                $size = $row['Size'];
+                                $lenght = $row['Lenght'];
+                                $shoulders = $row['Shoulders'];
+                                $sleeve = $row['Sleeve'];
+                                
+                                echo '
+                                <tr>
+                                    <td>'.$size.'</td>
+                                    <td>'.$lenght.'</td>
+                                    <td>'.$shoulders.'</td>
+                                    <td>'.$sleeve.'</td>
+                                </tr>
+                                ';
+                            }
+                        }else{
+                            echo "<tr><td colspan='2'>Errore, impossibile eseguire la query " . $sql ."." . $connessione->connect_error . "</td></tr>"; 
+                        }
+                    ?>
+                </table>
+            </div>
+            
         </div>
         
+
     </div>
     
 </body>
