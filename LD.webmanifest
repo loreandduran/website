@@ -1,6 +1,6 @@
 {
-    "name": "Lore and Duran DEV",
-    "short_name": "Lore&Duran DEV",
+    "name": "Lore and Duran",
+    "short_name": "Lore&Duran",
     "description": "WebApp for Lore&Duran brand",
     "icons": [
         {
@@ -39,7 +39,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "https://dev.loreandduran.com",
+    "start_url": "https://loreandduran.com",
     "display": "standalone",
     "theme_color": "#c5c2ba",
     "background_color": "#c5c2ba"
