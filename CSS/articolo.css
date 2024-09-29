@@ -44,11 +44,38 @@ header img {
   height: 80vh;
   position: relative;
 }
+
+.content{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 50vw;
+  height: 60vh;
+  align-items: center;
+}
+
 .testo {
   flex: 1;
   margin: auto;
   margin-top: 0;
+  
 }
+
+.table {
+  flex: 1;
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+
+}
+
+table, th, td{
+    border: 2px solid black;
+    margin: 0px;
+    padding: 5px;
+    border-collapse: collapse;
+}
+
 /* Slideshow container */
 .slideshow-container {
   width: 100%;
@@ -130,6 +157,8 @@ header img {
   from {opacity: .4} 
   to {opacity: 1}
 }
+
+
 
 
 
