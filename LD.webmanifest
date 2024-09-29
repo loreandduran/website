@@ -39,7 +39,7 @@
             "type": "image/png"
         }
     ],
-    
+    "start_url": "https://dev.loreandduran.com",
     "display": "standalone",
     "theme_color": "#c5c2ba",
     "background_color": "#c5c2ba"
