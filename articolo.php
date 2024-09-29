@@ -18,6 +18,7 @@
     <link rel="icon" type="image/svg+xml" href="image/logo.svg" style="background-color: #fff;">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="./JS/articolo.js"></script>
+    <link rel="manifest" href="LD.webmanifest">
 </head>
 <body>
     <a href="index.php" class="navbar">

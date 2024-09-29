@@ -12,7 +12,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
 
-
+    
+    <link rel="manifest" href="LD.webmanifest">
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="icon" type="image/svg+xml" href="image/logo.svg" style="background-color: #fff;">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
