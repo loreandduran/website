@@ -4,42 +4,42 @@
     "description": "WebApp for Lore&Duran brand",
     "icons": [
         {
-            "src": "icons/16.png",
+            "src": "Icons/16.png",
             "sizes": "16x16",
             "type": "image/png"
         },
         {
-            "src": "icons/32.png",
+            "src": "Icons/32.png",
             "sizes": "32x32",
             "type": "image/png"
         },
         {
-            "src": "icons/64.png",
+            "src": "Icons/64.png",
             "sizes": "64x64",
             "type": "image/png"
         },
         {
-            "src": "icons/128.png",
+            "src": "Icons/128.png",
             "sizes": "128x128",
             "type": "image/png"
         },
         {
-            "src": "icons/256.png",
+            "src": "Icons/256.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "icons/512.png",
+            "src": "Icons/512.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "icons/1024.png",
+            "src": "Icons/1024.png",
             "sizes": "1024x1024",
             "type": "image/png"
         }
     ],
-    "start_url": "https://dev.loreandduran.com",
+    "start_url": "https://loreandduran.com",
     "display": "fullscreen",
     "theme_color": "#c5c2ba",
     "background_color": "#c5c2ba"
