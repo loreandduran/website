@@ -39,7 +39,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "/website/index.php",
+    "start_url": "https://loreandduran.com",
     "display": "fullscreen",
     "theme_color": "#c5c2ba",
     "background_color": "#c5c2ba"
