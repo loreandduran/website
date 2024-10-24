@@ -8,7 +8,7 @@
     <meta property="og:title" content="LORE&DURAN" />
     <meta property="og:url" content="https://loreandduran.com/" />
     <meta property="og:description" content="Startup di capi d'abbigliamento" />
-    <meta property="og:image" content="/var/www/image/logo.png" />
+    <meta property="og:image" content="image/logo.png" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
 
@@ -25,7 +25,7 @@
         
         <img src="image/montagne.jpg" class="main_photo">-->
 
-        <img src="/var/www/image/logo.svg" class="logo">
+        <img src="image/logo.svg" class="logo">
         <p class="slogan">Your style your sign</p>
     </div>
     <div class="separator"></div>
@@ -83,7 +83,7 @@
                 echo '
                 <a href="/articolo.php?item='.$idArticolo.'">
                 <div class="item">
-                    <div class="item_image '.$image_side.'"><img src="./image/articoli/'.$idArticolo.'/1.'.$estensione.'" alt=""></div>
+                    <div class="item_image '.$image_side.'"><img src="image/articoli/'.$idArticolo.'/1.'.$estensione.'" alt=""></div>
                     <div class="item_text '.$text_side.'">
                         <h2>'.$colore.'</h2>
                         <p>'.$descrizione.'</p>
