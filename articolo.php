@@ -110,6 +110,10 @@
                 ?>
             </div>
             
+            <div class="ordina">
+                <a href="/contatti.html" class="button">Ordina ora</a>
+            </div>
+
             <div class="table">
                 <table>
                     <tr>
