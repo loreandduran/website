@@ -1,6 +1,6 @@
 <?php
 function connect(){
-    $host = "192.168.1.140";
+    $host = "192.168.0.140";
     $user = "site";
     $password = "sitepswd";
     $database = "website";
